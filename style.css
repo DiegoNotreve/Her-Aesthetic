@@ -15,12 +15,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
 }
 
-
-body {
-    height: 100vh;
-}
 
 html {
     scroll-behavior: smooth;
@@ -28,14 +25,21 @@ html {
 
 body, html {
     height: 100%;
+    width: 100%;
+
     
 }
+
+
 section {
     height: 100vh; /* Certifique-se de que cada seção ocupe 100% da altura da tela */
     display: flex;
     flex-direction: column;
 }
 
+.efeito-logo, .efeito-frase, .efeito-servicos, .efeito-container-importancia1, .efeito-container-importancia2, .efeito-container-importancia3, .efeito-sobre, .efeito-texto-sobre {
+    visibility: hidden;
+}
 
 .navbar {
     display: flex;
@@ -109,6 +113,7 @@ section {
     display: flex;
     transition: transform 1s ease-in-out;
 }
+
 .hero-bg img {
     width: 100vw;
     height: 100%;
@@ -261,6 +266,7 @@ section {
     width: 100%; 
     height: auto;
     border-radius: 8px;
+   
 }
 
 .card h2 {
@@ -477,7 +483,6 @@ section {
     justify-content: center;
     align-items: center;
     font-family: "Nunito";
-    color: var(--color-2);
 }
 
 .titulo-avaliacao {
@@ -492,11 +497,7 @@ section {
     margin-bottom: 10px;
 }
 
-.avaliacao-header p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-    color: var(--color-2);
-}
+
 
 /* Estilização do carrossel */
 .swiper {
@@ -534,14 +535,16 @@ section {
 .avaliacao {
     text-align: center;
     padding: 50px 20px;
-    background-color:var(--color-1);
     display: flex;
     flex-direction: column; /* Para organizar título e carrossel */
     justify-content: center;
     align-items: center;
     font-family: "Nunito", sans-serif;
-    color: var(--color-2);
     width: 100%;
+    background-image: url('https://qtxasset.com/quartz/qcloud5/media/image/fiercebiotech/1605294865/shutterstock_542947291.jpg/shutterstock_542947291.jpg?VersionId=YkBEk6YICArSmZqhx3ggnhVnL9aQASpW');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .titulo-avaliacao {
@@ -556,10 +559,15 @@ section {
     margin-bottom: 10px;
 }
 
+.titulo-avaliacao h1 {
+    color: var(--color-5);
+
+}
+
 .avaliacao-header p {
     font-size: 1.2rem;
     margin-bottom: 30px;
-    color: var(--color-2);
+    color: #000;
 }
 
 /* Carrossel */
@@ -642,6 +650,7 @@ section {
     justify-content: center;
     align-items: center;
     gap: 50px;
+    margin-top: 30px;
 }
 
 .swiper-button-prev, .swiper-button-next {
@@ -722,12 +731,122 @@ footer {
 
 
 
-/* Responsividade */
-@media (max-width: 768px) {
-    .swiper-slide {
-        flex: 0 0 calc(100% / 1.5); /* Exibe menos cards */
+/* Responsivo para telas menores */
+@media (max-width: 1024px) {
+    .menu {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .menu li {
+        margin: 10px 0;
+    }
+    
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .btn-agendar {
+        margin-top: 10px;
+    }
+
+    .tagline {
+        font-size: 80px;
+    }
+    
+    .titulo-com-tracos::before,
+    .titulo-com-tracos::after {
+        width: 15%;
     }
 }
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .navbar .logo img {
+        height: 80px;
+    }
+
+    .menu {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu li {
+        margin: 5px 0;
+    }
+
+    .hero-content {
+        padding: 15px;
+    }
+
+    .tagline {
+        font-size: 60px;
+    }
+
+    .servicos-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%;
+    }
+
+    .titulo-com-tracos::before,
+    .titulo-com-tracos::after {
+        width: 10%;
+    }
+
+    .importancia-1 {
+        flex-direction: column;
+        width: 90%;
+        text-align: center;
+    }
+
+    .importancia-1 img {
+        margin: 0 0 15px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar .logo img {
+        height: 60px;
+    }
+
+    .tagline {
+        font-size: 40px;
+    }
+
+    .titulo-com-tracos {
+        font-size: 2rem;
+    }
+
+    .card h2 {
+        font-size: 24px;
+    }
+
+    .card ul li {
+        font-size: 14px;
+    }
+
+    .importancia-container {
+        gap: 20px;
+    }
+
+    .textos-importancia h3 {
+        font-size: 1.5rem;
+    }
+
+    .textos-importancia p {
+        font-size: 1rem;
+    }
+}
+
 
 
 

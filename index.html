@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    
+    <script src="https://unpkg.com/scrollreveal"></script>
+    
+    <script src="index.js" defer></script>
+    <script src="revel.js" defer></script>
+    <script src="containers.js" defer></script>
+    <script src="depoimentos.js" defer></script>
 
     <title>Her Aesthetic</title>
   </head>
@@ -20,6 +27,9 @@
         </li>
         <li>
           <a href="#servicos"><i class="fas fa-spa"></i> Serviços</a>
+        </li>
+        <li>
+          <a href="#importancia"><i class="fa-solid fa-hand-holding-heart"></i> Cuidados</a>
         </li>
         <li>
           <a href="#avaliacao"><i class="fas fa-comments"></i> Depoimentos</a>
@@ -39,21 +49,21 @@
         <img src="imagens/estética-unhas.webp" alt="Imagem 4" />
       </div>
       <div class="hero-content">
-        <div class="logo">
+        <div class="logo efeito-logo" >
           <img src="imagens/logonova.png" alt="Her Aesthetic Logo" />
         </div>
-        <p class="tagline">
+        <p class="tagline efeito-frase">
           Realce sua beleza com nossos cuidados especializados!
         </p>
       </div>
     </section>
 
     <section class="servicos" id="servicos">
-      <div class="titulo-servicos">
+      <div class="titulo-servicos efeito-servicos">
         <h1 class="titulo-com-tracos">Nossos Serviços</h1>
       </div>
 
-      <div class="menu-servicos">
+      <div class="menu-servicos" id="efeito-servicos-subtitle">
         <a class="sub-title" href="/">Design de Sobrancelha</a>
         <span class="decoracao"></span>
         <a class="sub-title" href="/">Manicure e Pedicure</a>
@@ -63,8 +73,8 @@
         <a class="sub-title" href="/">Lash Lifting</a>
       </div>
 
-      <div class="servicos-container" id="container1">
-        <div class="card">
+      <div class="servicos-container " id="container1">
+        <div class="card" id="efeito-card1">
           <h2>- Henna -</h2>
           <img src="imagens/sobrancelhas/sobrancelha-henna1.png" alt="Henna" />
           <ul>
@@ -76,7 +86,7 @@
             </li>
           </ul>
         </div>
-        <div class="card">
+        <div class="card" id="efeito-card2">
           <h2>- Micropigmentação -</h2>
           <img
             src="imagens/sobrancelhas/sobrancelha-micropigmentação.png"
@@ -88,7 +98,7 @@
             <li>Indicado para quem deseja um design duradouro e definido.</li>
           </ul>
         </div>
-        <div class="card">
+        <div class="card" id="efeito-card3">
           <h2>- Design Tradicional -</h2>
           <img
             src="imagens/sobrancelhas/sobrancelha-tradicional.png"
@@ -102,7 +112,7 @@
         </div>
       </div>
 
-      <div class="servicos-container" id="container2">
+      <div class="servicos-container " id="container2">
         <div class="card">
           <h2>- Manicure Tradicional -</h2>
           <img src="imagens/manicure e pedicure/unhas em gel.png" alt="Henna" />
@@ -244,13 +254,13 @@
     </section>
 
     <section class="importancia" id="importancia">
-      <div class="titulo-importancia">
+      <div class="titulo-importancia efeito-importancia">
         <h1 class="titulo-com-tracos-importancia">
           A Importância da Estética na Vida da Mulher
         </h1>
       </div>
-      <div class="importancia-container">
-        <div class="importancia-1">
+      <div class="importancia-container ">
+        <div class="importancia-1 efeito-container-importancia1">
           <img src="imagens/icones/icone1.png" alt="">
          
           <div class="textos-importancia">
@@ -265,7 +275,7 @@
           </div>
         </div>
 
-        <div class="importancia-1">
+        <div class="importancia-1 efeito-container-importancia2">
             <img src="imagens/icones/icone2.png" alt="">
           <div class="textos-importancia">
             <h3>Autocuidado e Saúde</h3>
@@ -275,7 +285,7 @@
           </div>
         </div>
 
-        <div class="importancia-1">
+        <div class="importancia-1 efeito-container-importancia3">
             <img class="roxa" src="imagens/icones/icone3.png" alt="">
            
         
@@ -290,15 +300,15 @@
     </section>
 
     <section class="sobre" id="sobre">
-        <div class="titulo-sobre">
+        <div class="titulo-sobre efeito-sobre">
             <h1 class="titulo-com-tracos-sobre">Nossa Equipe</h1>
           </div>
           <div class="container-sobre">
-          <div class="camada">
+          <div class="camada efeito-texto-sobre">
             <div class="sobre-logo">
               <img src="imagens/logonova.png" alt="Her Aesthetic Logo" />
             </div>
-            <p class="texto-sobre">
+            <p class="texto-sobre ">
               Nossa equipe é formada por profissionais apaixonadas por beleza e bem-estar, dedicadas a realçar a sua autoestima com cuidado e excelência. Com anos de experiência em design de sobrancelhas, unhas e tratamentos estéticos, buscamos oferecer um atendimento personalizado, sempre alinhado às últimas tendências e técnicas do mercado.
               Acreditamos que cada mulher é única, e nosso compromisso é proporcionar uma experiência especial, onde cada detalhe é pensado para valorizar sua beleza natural. Mais do que serviços estéticos, oferecemos momentos de autocuidado, confiança e empoderamento.
               Nosso espaço foi criado para que você se sinta acolhida, relaxada e confiante, permitindo que cada visita seja uma pausa revigorante na sua rotina. Utilizamos produtos de alta qualidade e priorizamos um ambiente harmonioso para garantir o máximo de conforto e bem-estar. Seja para uma mudança sutil ou uma transformação completa, estamos aqui para tornar sua experiência única e inesquecível
@@ -506,9 +516,7 @@
 
     </footer>
 
-    <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> -->
-    <script src="index.js"></script>
-    <script src="containers.js"></script>
-    <script src="depoimentos.js"></script>
+    
+
   </body>
 </html>
