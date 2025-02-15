@@ -1,0 +1,737 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Petemoss&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Righteous&display=swap');
+
+:root {
+   
+    --color-1: #F8EDE3;
+    --color-2: #EB8AB4;
+    --color-3: #b37a6b;
+    --color-4: #F4D1D1;
+    --color-5: #db4b8a;
+   
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    height: 100vh;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body, html {
+    height: 100%;
+    
+}
+section {
+    height: 100vh; /* Certifique-se de que cada seção ocupe 100% da altura da tela */
+    display: flex;
+    flex-direction: column;
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px 40px;
+    background: var(--color-1);
+    box-shadow: 0 4px 6px #0000001a;
+    width: 100%;
+    z-index: 1000;
+    font-family: "Poppins", serif;
+    font-style: italic;
+}
+
+.navbar .logo img{
+    width: auto;
+    height: 100px;
+  
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+}
+.menu li {
+    margin: 0 40px;
+}
+.menu li a {
+    text-decoration: none;
+    color: var(--color-2);
+    font-size: 24px;
+    transition: 0.3s;
+}
+.menu li a:hover {
+    color: var(--color-3);
+}
+.btn-agendar {
+    background: var(--color-2);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.btn-agendar:hover {
+    background: var(--color-3);
+}
+
+
+/* SECTION 1 */
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 410%; /* A largura total é 3x a tela, pois há 3 imagens */
+    height: 100%;
+    display: flex;
+    transition: transform 1s ease-in-out;
+}
+.hero-bg img {
+    width: 100vw;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.7;
+}
+
+.hero-content {
+    position: relative;
+    color: black;
+
+    padding: 20px;
+    border-radius: 10px;
+}
+.logo img {
+    max-width: 300px;
+    z-index: 5;
+}
+.tagline {
+    font-size: 120px;
+    font-family: "Petemoss", serif;
+    margin-top: 10px;
+    
+}
+
+/* SECTION 2 */
+
+.servicos {
+    height: 100vh;
+    background-color: var(--color-1);
+}
+
+.servicos h2 {
+    font-size: 40px;
+    text-align: center;
+    margin: 40px 0;
+}
+
+.titulo-servicos {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+}
+
+.titulo-servicos h1.titulo-com-tracos {
+    color: var(--color-2);
+    font-family: "Nunito", serif;
+    font-size: 3rem;
+    font-weight: 800;
+    text-align: center;
+    position: relative;
+    margin: 20px 0;
+}
+
+
+  
+  .titulo-com-tracos::before,
+  .titulo-com-tracos::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 20%;
+    height: 2px;
+    background-color: var(--color-2);
+  }
+  
+  .titulo-com-tracos::before {
+    left: 18%;
+  }
+  
+  .titulo-com-tracos::after {
+    right: 18%;
+  }
+
+  .menu-servicos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 20px 0;
+    gap: 60px;
+    
+  }
+
+  .sub-title {
+    font-size: 24px;
+    font-family: "Nunito", serif;
+    font-weight: 800;
+    color: var(--color-2);
+    margin: 20px 0;
+    text-decoration: none;
+    padding: 0 10px;
+  }
+  
+  .decoracao {
+    background-color: var(--color-2);
+    width: 3px;
+    height: 40px;
+    z-index: 1000;
+    display: inline block;
+    border-radius: 10px;
+}
+
+
+
+.servicos-container {
+    display: flex; 
+    justify-content: space-around; 
+    align-items: stretch; 
+    flex-wrap: wrap; 
+    gap: 20px; 
+    padding: 20px;
+}
+
+
+/* condiçoes para o efeito de transicao do js */
+.servicos-container {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    transition: opacity 0.5s ease-in-out, visibility 0s linear 0.5s;
+}
+
+.servicos-container.show {
+    opacity: 1;
+    visibility: visible;
+    position: relative;
+    transition: opacity 0.5s ease-in-out, visibility 0s linear 0s;
+}
+
+.servicos-container:first-of-type {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* fim condicoes */
+
+.card {
+    background: var(--color-5); 
+    border-radius: 10px; 
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  */
+    padding: 20px;
+    text-align: center;
+    width: 30%; 
+    height: auto;
+}
+
+.card img {
+    width: 100%; 
+    height: auto;
+    border-radius: 8px;
+}
+
+.card h2 {
+    font-size: 30px;
+    margin-bottom: 10px;
+    color: var(--color-4);
+    font-family: "Nunito", serif;
+    font-weight: 800;
+}
+
+.card ul {
+    padding: 0 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    width: 100%;
+    margin-left: 6%;
+}
+
+.card ul li {
+    font-size: 1rem;
+    color: var(--color-4);
+    font-family: "Poppins", serif;
+    font-weight: 700;
+    padding: 10px 0;
+    text-align: left; 
+    width: 100%;
+}
+
+/* SESSAO 3 */
+
+.importancia {
+    height: 100vh;
+    background-color: var(--color-1);
+   
+}
+
+.titulo-importancia {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+}
+
+.titulo-importancia .titulo-com-tracos-importancia {
+    color: var(--color-2);
+    font-family: "Nunito", serif;
+    font-size: 3rem;
+    font-weight: 800;
+    text-align: center;
+    position: relative;
+    margin: 20px 0;
+}
+
+.titulo-com-tracos-importancia::before,
+.titulo-com-tracos-importancia::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 15%;
+  height: 2px;
+  background-color: var(--color-2);
+}
+
+.titulo-com-tracos-importancia::before {
+  left: 5%;
+}
+
+.titulo-com-tracos-importancia::after {
+  right: 5%;
+}
+
+.importancia-container {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    gap: 40px; 
+}
+
+.importancia-1 {
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    width: 50%;
+    
+}
+
+
+
+.textos-importancia {
+    display: flex;
+    flex-direction: column; 
+    gap: 20px; 
+}
+
+.textos-importancia h3 {
+    font-size: 2rem; 
+    color: var(--color-5);
+    font-family: "Nunito", serif;
+    font-weight: 900;
+}
+
+.textos-importancia p {
+    font-size: 1.3rem; 
+    font-family: "Poppins", serif;
+    color: var(--color-5);
+}
+
+.importancia-1 img {
+    width: auto;
+    height: 200px;
+    margin-right: 20px;
+}
+
+.importancia-1 img.roxa {
+    width: auto;
+    height: 200px;
+    margin-right: 40px;
+}
+
+/* SECTION 4 */
+
+.sobre {
+    position: relative;
+    background-image: url('https://i.pinimg.com/originals/1e/ed/81/1eed812403611a9fd71367c070b0b998.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.sobre::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Ajuste a opacidade aqui */
+    z-index: 1;
+}
+
+.sobre * {
+    position: relative;
+    z-index: 2;
+}
+
+ .titulo-com-tracos-sobre {
+    color: var(--color-2);
+    font-family: "Nunito", serif;
+    font-size: 3rem;
+    font-weight: 800;
+    text-align: center;
+    position: relative;
+    margin: 20px 0;
+}
+
+.titulo-com-tracos-sobre::before,
+.titulo-com-tracos-sobre::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 15%;
+  height: 2px;
+  background-color: var(--color-2);
+}
+
+.titulo-com-tracos-sobre::before {
+  left: 25%;
+}
+
+.titulo-com-tracos-sobre::after {
+  right: 25%;
+}
+
+.container-sobre {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.camada {
+    width: 70%;
+    height: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #f4d1d19c;
+    border-radius: 20px;
+}
+
+.sobre-logo img {
+    width: 100%;
+    height: 200px;
+}
+
+.texto-sobre {
+    color: #000;
+    padding: 20px;
+    font-size: 25px;
+    font-family: "Poppins", serif;
+}
+
+
+
+/* SECTION 5 */
+
+.avaliacao {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Nunito";
+    color: var(--color-2);
+}
+
+.titulo-avaliacao {
+    display: flex;
+    justify-content: center;
+}
+
+.titulo-com-tracos-avaliacao {
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.avaliacao-header p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: var(--color-2);
+}
+
+/* Estilização do carrossel */
+.swiper {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.swiper-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    
+}
+
+
+/* Estrelas de avaliação */
+.avaliacao-rate {
+    color: #FFD700;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+/* Avaliação do cliente */
+.avaliacao-quote {
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--color-1);
+    margin-bottom: 15px;
+}
+
+/* Informações do cliente */
+
+.avaliacao {
+    text-align: center;
+    padding: 50px 20px;
+    background-color:var(--color-1);
+    display: flex;
+    flex-direction: column; /* Para organizar título e carrossel */
+    justify-content: center;
+    align-items: center;
+    font-family: "Nunito", sans-serif;
+    color: var(--color-2);
+    width: 100%;
+}
+
+.titulo-avaliacao {
+    display: flex;
+    justify-content: center;
+}
+
+.titulo-com-tracos-avaliacao {
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.avaliacao-header p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: var(--color-2);
+}
+
+/* Carrossel */
+.swiper {
+    overflow: hidden;
+    width: 100%;
+    max-width: 1200px; 
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.swiper-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 90%;
+}
+
+.swiper-slide {
+    background: var(--color-5);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 33.33%;
+    flex: 0 0 33.33%; 
+    margin: 10px; 
+}
+
+/* Estrelas de avaliação */
+.avaliacao-rate {
+    color: #FFD700;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+/* Avaliação do cliente */
+.avaliacao-quote {
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--color-1);
+    margin-bottom: 15px;
+}
+
+/* Informações do cliente */
+.avaliacao-author {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.author-avatar img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.author-info h3 {
+    font-size: 1.1rem;
+    color: #000;
+    margin: 0;
+}
+
+.author-info p {
+    font-size: 0.9rem;
+    color: var(--color-4);
+    margin: 0;
+}
+
+/* Botões do Carrossel */
+
+.botoes {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.swiper-button-prev, .swiper-button-next {
+   width: 50px;
+   height: 50px;
+   border-radius: 50px;
+   border: 0;
+   background-color: var(--color-5);
+cursor: pointer;
+z-index: 10; 
+
+}
+
+.botoes i {
+    font-size: 18px;
+    color: var(--color-4);
+}
+
+footer {
+    width: 100%;
+    height: 350px;
+    background-color: var(--color-4);
+    display: flex;
+    flex-direction: column;
+}
+
+.contato-estetica, .contato-diego {
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.contato-estetica h2 {
+    text-align: center;
+    font-family: 'nunito' , serif;
+    margin: 0 0 0 10px;
+    color: var(--color-5);
+}
+
+
+.contato-estetica ul, .contato-diego ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    gap: 30px;
+    margin-top: 15px;
+}
+
+.contato-estetica i, .contato-diego i {
+    color: var(--color-5);
+    font-size: 40px;
+    transition: 0.2s;
+}
+
+.contato-estetica i:hover, .contato-diego i:hover {
+    transform: scale(1.05);
+}
+
+.contato-diego p {
+    font-family: 'poppins';
+    font-size: 20px;
+    margin: 10px;
+}
+.contato-diego a {
+    text-decoration: none;
+    color: var(--color-5);
+}
+
+.contato-diego a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .swiper-slide {
+        flex: 0 0 calc(100% / 1.5); /* Exibe menos cards */
+    }
+}
+
+
+
+
+ 
+
+
