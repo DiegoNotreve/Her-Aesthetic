@@ -4,7 +4,7 @@
 :root {
    
     --color-1: #F8EDE3;
-    --color-2: #EB8AB4;
+    --color-2: #db4b8a;
     --color-3: #b37a6b;
     --color-4: #F4D1D1;
     --color-5: #db4b8a;
@@ -135,9 +135,10 @@ section {
 .tagline {
     font-size: 120px;
     font-family: "Petemoss", serif;
+    font-weight: 500;
     margin-top: 10px;
-    
-}
+    color: var(--color-5);
+    box-shadow: 0 4px 2px #0000001a;}
 
 /* SECTION 2 */
 
@@ -455,17 +456,19 @@ section {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: #f4d1d19c;
+    background-color: #2c27279c;
     border-radius: 20px;
 }
 
 .sobre-logo img {
     width: 100%;
     height: 200px;
+    background-color: var(--color-4);
+    border-radius: 10px;
 }
 
 .texto-sobre {
-    color: #000;
+    color: var(--color-5);
     padding: 20px;
     font-size: 25px;
     font-family: "Poppins", serif;
@@ -726,126 +729,119 @@ footer {
     text-decoration: underline;
 }
 
+/* MENU MOBILE */
+
+.menu-mobile {
+    background-color: var(--color-4);
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 90000;
+    width: 0%;
+    overflow: hidden;
+    transition: .5s;
+}
+
+.menu-mobile.abrir-menu {
+    width: 70%;
+}
+
+.menu-mobile.abrir-menu ~ .overlay-menu {
+    display: block;
+}
+
+.menu-mobile .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-mobile img {
+    width: auto;
+    height: 200px;
+}
+
+.menu-mobile  nav ul {
+    text-align: right;
+    list-style-type: none;
+}
+
+.menu-mobile nav ul a {
+    font-size: 30px;
+    text-decoration: none;
+    padding: 20px 10%;
+    display: block;
+    color: var(--color-5);
+    font-family: 'nunito' , serif;
+    font-weight: 900;
+}
+
+.menu-mobile nav ul a:hover {
+    background-color: var(--color-1);
+}
 
 
+.btn-abrir-menu {
+    background-color: var(--color-1);
+    
+}
 
+.btn-abrir-menu i {
+    font-size: 30px;
+    padding: 20px;
+    color: var(--color-5);
+}
 
+.btn-abrir-menu p {
+    font-size: 30px;
+    font-family: 'nunito', serif;
+    font-weight: 900;
+    color: var(--color-5);
+}
+
+.btn-abrir-menu{
+    display: none;
+}
+
+.btn-fechar {
+    padding: 20px 10px;
+}
+
+.btn-fechar i{
+ font-size: 40px;
+ color: var(--color-5);
+}
+
+.overlay-menu {
+    /* este é o efeito do overlay(sombra atrás do menu) */
+    background-color: #000000be;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 88888;
+    display: none;
+  }
 
 /* Responsivo para telas menores */
-@media (max-width: 1024px) {
-    .menu {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .menu li {
-        margin: 10px 0;
-    }
-    
-    .navbar {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .btn-agendar {
-        margin-top: 10px;
-    }
 
-    .tagline {
-        font-size: 80px;
-    }
-    
-    .titulo-com-tracos::before,
-    .titulo-com-tracos::after {
-        width: 15%;
-    }
-}
 
 @media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        padding: 10px;
-    }
+  .navbar {
+    display: none;
+  }
 
-    .navbar .logo img {
-        height: 80px;
-    }
-
-    .menu {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .menu li {
-        margin: 5px 0;
-    }
-
-    .hero-content {
-        padding: 15px;
-    }
-
-    .tagline {
-        font-size: 60px;
-    }
-
-    .servicos-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .card {
-        width: 90%;
-    }
-
-    .titulo-com-tracos::before,
-    .titulo-com-tracos::after {
-        width: 10%;
-    }
-
-    .importancia-1 {
-        flex-direction: column;
-        width: 90%;
-        text-align: center;
-    }
-
-    .importancia-1 img {
-        margin: 0 0 15px 0;
-    }
+  .btn-abrir-menu{
+    display: block;
+    display: flex;
+    align-items: center;
 }
 
-@media (max-width: 480px) {
-    .navbar .logo img {
-        height: 60px;
-    }
 
-    .tagline {
-        font-size: 40px;
-    }
-
-    .titulo-com-tracos {
-        font-size: 2rem;
-    }
-
-    .card h2 {
-        font-size: 24px;
-    }
-
-    .card ul li {
-        font-size: 14px;
-    }
-
-    .importancia-container {
-        gap: 20px;
-    }
-
-    .textos-importancia h3 {
-        font-size: 1.5rem;
-    }
-
-    .textos-importancia p {
-        font-size: 1rem;
-    }
 }
+
 
 
 

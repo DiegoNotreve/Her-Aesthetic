@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
     
     <script src="https://unpkg.com/scrollreveal"></script>
-    
+    <script src="menumobile.js" defer></script>
     <script src="index.js" defer></script>
     <script src="revel.js" defer></script>
     <script src="containers.js" defer></script>
@@ -32,7 +32,7 @@
           <a href="#importancia"><i class="fa-solid fa-hand-holding-heart"></i> Cuidados</a>
         </li>
         <li>
-          <a href="#avaliacao"><i class="fas fa-comments"></i> Depoimentos</a>
+          <a href="#avaliacao"><i class="fas fa-comments"></i> Feedbacks</a>
         </li>
         <li>
           <a href="#contato"><i class="fas fa-envelope"></i> Contato</a>
@@ -40,6 +40,44 @@
       </ul>
       <a href="#agendar" class="btn-agendar">Agendar Agora</a>
     </nav>
+
+    <div class="btn-abrir-menu" id="btn-menu">
+      <i class="fa-solid fa-list-ul"> </i>
+      <p>Menu</p>
+    </div>
+
+    <div class="menu-mobile" id="menu-mobile">
+      <div class="btn-fechar">
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+      <nav>
+        <div class="logo">
+          <img src="imagens/logonova.png" alt="" />
+        </div>
+        <ul>
+          
+          <li>
+            <a href="#sobre"><i class="fas fa-user"></i> Sobre Nós</a>
+          </li>
+          <li>
+            <a href="#servicos"><i class="fas fa-spa"></i> Serviços</a>
+          </li>
+          <li>
+            <a href="#importancia"><i class="fa-solid fa-hand-holding-heart"></i> Cuidados</a>
+          </li>
+          <li>
+            <a href="#avaliacao"><i class="fas fa-comments"></i> Feedbacks</a>
+          </li>
+          <li>
+            <a href="#contato"><i class="fas fa-envelope"></i> Contato</a>
+          </li>
+          <li><a href="#agendar"><i class="fas fa-calendar-check"></i> Agendar Agora</a></li>
+        </ul>
+      </nav>
+
+    </div>
+
+    <div class="overlay-menu" id="overlay-menu"></div>
 
     <section class="hero">
       <div class="hero-bg" id="hero-bg">
