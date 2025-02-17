@@ -138,7 +138,8 @@ section {
     font-weight: 500;
     margin-top: 10px;
     color: var(--color-5);
-    box-shadow: 0 4px 2px #0000001a;}
+    box-shadow: 0 4px 2px #0000001a;
+}
 
 /* SECTION 2 */
 
@@ -446,6 +447,7 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 
@@ -477,7 +479,7 @@ section {
 
 
 /* SECTION 5 */
-
+/* 
 .avaliacao {
     text-align: center;
     padding: 50px 20px;
@@ -502,7 +504,7 @@ section {
 
 
 
-/* Estilização do carrossel */
+
 .swiper {
     overflow: hidden;
     width: 100%;
@@ -518,14 +520,14 @@ section {
 }
 
 
-/* Estrelas de avaliação */
+
 .avaliacao-rate {
     color: #FFD700;
     font-size: 1.5rem;
     margin-bottom: 10px;
 }
 
-/* Avaliação do cliente */
+
 .avaliacao-quote {
     font-size: 1rem;
     font-style: italic;
@@ -533,13 +535,13 @@ section {
     margin-bottom: 15px;
 }
 
-/* Informações do cliente */
 
+/
 .avaliacao {
     text-align: center;
     padding: 50px 20px;
     display: flex;
-    flex-direction: column; /* Para organizar título e carrossel */
+    flex-direction: column; 
     justify-content: center;
     align-items: center;
     font-family: "Nunito", sans-serif;
@@ -573,7 +575,7 @@ section {
     color: #000;
 }
 
-/* Carrossel */
+
 .swiper {
     overflow: hidden;
     width: 100%;
@@ -586,7 +588,7 @@ section {
 .swiper-wrapper {
     display: flex;
     transition: transform 0.5s ease-in-out;
-    width: 90%;
+    width: 100%;
 }
 
 .swiper-slide {
@@ -598,18 +600,18 @@ section {
     flex-direction: column;
     align-items: center;
     max-width: 33.33%;
-    flex: 0 0 33.33%; 
+    flex: 0 0 calc(33.33% - 20px);
     margin: 10px; 
 }
 
-/* Estrelas de avaliação */
+
 .avaliacao-rate {
     color: #FFD700;
     font-size: 1.5rem;
     margin-bottom: 10px;
 }
 
-/* Avaliação do cliente */
+
 .avaliacao-quote {
     font-size: 1rem;
     font-style: italic;
@@ -617,7 +619,6 @@ section {
     margin-bottom: 15px;
 }
 
-/* Informações do cliente */
 .avaliacao-author {
     display: flex;
     align-items: center;
@@ -644,7 +645,7 @@ section {
     margin: 0;
 }
 
-/* Botões do Carrossel */
+
 
 .botoes {
     width: 100%;
@@ -670,7 +671,61 @@ z-index: 10;
 .botoes i {
     font-size: 18px;
     color: var(--color-4);
+} */
+
+
+
+.avaliacao {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f9f9f9;
 }
+
+.carrossel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.carrossel {
+    overflow: hidden;
+    width: 80%;
+    max-width: 600px;
+}
+
+.carrossel-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.nav-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+#prev {
+    position: absolute;
+    left: 10px;
+}
+
+#next {
+    position: absolute;
+    right: 10px;
+}
+
 
 footer {
     width: 100%;
@@ -827,6 +882,35 @@ footer {
 
 /* Responsivo para telas menores */
 
+/* Responsivo para telas menores */
+@media (max-width: 1024px) {
+    .menu {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .menu li {
+        margin: 10px 0;
+    }
+    
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .btn-agendar {
+        margin-top: 10px;
+    }
+
+    .tagline {
+        font-size: 80px;
+    }
+    
+    .titulo-com-tracos::before,
+    .titulo-com-tracos::after {
+        width: 15%;
+    }
+}
 
 @media (max-width: 768px) {
   .navbar {
@@ -839,9 +923,171 @@ footer {
     align-items: center;
 }
 
-
+.tagline {
+    font-size: 5rem;
 }
 
+.titulo-servicos .titulo-com-tracos::after{
+    right: 4%;
+}
+
+.titulo-servicos .titulo-com-tracos::before {
+    left: 4%;
+}
+
+.servicos {
+    height: auto;
+}
+
+.menu-servicos span {
+    margin: 0 10px;
+}
+
+ .card {
+    width: 70%;
+ }
+
+.importancia {
+    height: auto;
+}
+
+
+
+.titulo-importancia {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+
+ .titulo-importancia .titulo-com-tracos-importancia  {
+      font-size: 3rem;
+      padding: 20px 4%;
+    }
+
+    .titulo-com-tracos-importancia::before , .titulo-com-tracos-importancia::after{
+       display: none;
+    }
+
+    .importancia-1 {
+        width: 70%;
+        box-shadow: 0 4px 2px 2px #00000050;
+        border-radius: 20px;
+    }
+
+    .textos-importancia h3 {
+        text-align: center;
+        font-size: 1.7rem;
+        padding: 20px 2px;
+    }
+
+    .textos-importancia p {
+        padding: 15px;
+        text-align: center; 
+        
+    }   
+
+    .importancia-1 img {
+        margin: 0 15px;
+    }
+
+    .importancia-container {
+        padding: 20px;
+        height: auto;
+    }
+
+    .sobre {
+        height: auto;
+    }
+
+    .sobre {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .camada {
+        height: auto;
+        padding: 20px;
+        margin: 20px;
+    }
+
+
+    .titulo-com-tracos-sobre::after {
+        right: -20%;
+    }
+
+    .titulo-com-tracos-sobre::before {
+        left: -20%;
+    } 
+
+    .texto-sobre {
+        text-align: center;
+    }
+
+    .swiper {
+        width: 90%; /* Deixa o carrossel mais responsivo */
+    }
+
+    .swiper-slide {
+        width: 100% !important; /* Faz os slides ocuparem toda a largura */
+        max-width: 500px; /* Define um tamanho máximo */
+       
+    }
+
+    .avaliacao-quote {
+        font-size: 1.1rem; /* Reduz o tamanho do texto */
+        padding: 15px; /* Ajusta o espaçamento interno */
+    }
+
+    .avaliacao-author {
+        flex-direction: column; /* Empilha imagem e texto */
+        text-align: center;
+    }
+
+    .author-avatar img {
+        width: 60px; /* Reduz o tamanho da imagem */
+        height: 60px;
+    }
+
+    .avaliacao-rate {
+        font-size: 1rem; /* Reduz o tamanho das estrelas */
+    }
+}
+
+
+@media (max-width: 480px) {
+    .navbar .logo img {
+        height: 60px;
+    }
+
+    .tagline {
+        font-size: 40px;
+    }
+
+    .titulo-com-tracos {
+        font-size: 2rem;
+    }
+
+    .card h2 {
+        font-size: 24px;
+    }
+
+    .card ul li {
+        font-size: 14px;
+    }
+
+    .importancia-container {
+        gap: 20px;
+    }
+
+    .textos-importancia h3 {
+        font-size: 1.5rem;
+    }
+
+    .textos-importancia p {
+        font-size: 1rem;
+    }
+}
 
 
 
