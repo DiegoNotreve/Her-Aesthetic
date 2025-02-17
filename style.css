@@ -170,6 +170,13 @@ section {
     margin: 20px 0;
 }
 
+.titulo-servicos p {
+    text-align: center;
+    color: var(--color-2);
+    font-family: "Nunito", serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
 
   
   .titulo-com-tracos::before,
@@ -756,33 +763,71 @@ footer {
 
 /* Responsivo para telas menores */
 @media (max-width: 1024px) {
-    .menu {
-        flex-direction: column;
+    .navbar {
+        display: none;
+      }
+    
+      .btn-abrir-menu{
+        display: block;
+        display: flex;
         align-items: center;
     }
-    
-    .menu li {
-        margin: 10px 0;
-    }
-    
-    .navbar {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .btn-agendar {
-        margin-top: 10px;
+
+    .servicos, .sobre, .importancia {
+        height: auto;
     }
 
-    .tagline {
-        font-size: 80px;
+    .titulo-servicos .titulo-com-tracos::after{
+        right: 10%;
     }
-    
-    .titulo-com-tracos::before,
-    .titulo-com-tracos::after {
-        width: 15%;
+    .titulo-servicos .titulo-com-tracos::before {
+        left: 10%;
     }
+
+    .titulo-sobre
+.titulo-com-tracos-sobre::after {
+    right: 10%;
 }
+
+.titulo-sobre
+.titulo-com-tracos-sobre::before {
+    left: 10%;
+}
+
+    .menu-servicos {
+        flex-wrap: nowrap;
+        gap: 30px;
+    }
+
+    .card h2{
+        font-size: 20px;
+    }
+
+    .titulo-importancia .titulo-com-tracos-importancia {
+        font-size: 35px;
+    }
+
+    .titulo-com-tracos-importancia::after, .titulo-com-tracos-importancia::before{
+        content: '';
+        position: absolute;
+        top: 50%;
+        width: 8%;
+        height: 2px;
+        background-color: var(--color-2);
+    }
+    .importancia-container {
+        margin-bottom: 20px;
+    }
+
+    .camada {
+        height: auto;
+        margin-bottom: 20px;
+        padding: 20px;
+    }
+
+}
+
+
 
 @media (max-width: 768px) {
   .navbar {
@@ -795,17 +840,17 @@ footer {
     align-items: center;
 }
 
+.titulo-servicos .titulo-com-tracos::after, .titulo-servicos .titulo-com-tracos::before,  .titulo-importancia .titulo-com-tracos-importancia::before , .titulo-importancia .titulo-com-tracos-importancia::after, .titulo-sobre
+.titulo-com-tracos-sobre::after , .titulo-sobre .titulo-com-tracos-sobre::before  {
+   
+    display: none;
+}
+
 .tagline {
     font-size: 5rem;
 }
 
-.titulo-servicos .titulo-com-tracos::after{
-    right: 4%;
-}
 
-.titulo-servicos .titulo-com-tracos::before {
-    left: 4%;
-}
 
 .servicos {
     height: auto;
@@ -836,9 +881,6 @@ footer {
       padding: 20px 4%;
     }
 
-    .titulo-com-tracos-importancia::before , .titulo-com-tracos-importancia::after{
-       display: none;
-    }
 
     .importancia-1 {
         width: 70%;
@@ -884,26 +926,17 @@ footer {
     }
 
 
-    .titulo-com-tracos-sobre::after {
-        right: -20%;
-    }
-
-    .titulo-com-tracos-sobre::before {
-        left: -20%;
-    } 
-
     .texto-sobre {
         text-align: center;
     }
 
-
+    
     .avaliacao-quote {
         font-size: 1.1rem; /* Reduz o tamanho do texto */
         padding: 15px; /* Ajusta o espaçamento interno */
     }
 
     .avaliacao-author {
-        flex-direction: column; /* Empilha imagem e texto */
         text-align: center;
     }
 
@@ -918,29 +951,91 @@ footer {
 }
 
 
-@media (max-width: 480px) {
-    .navbar .logo img {
-        height: 60px;
+@media (max-width: 450px) {
+   
+    .titulo-servicos .titulo-com-tracos::after, .titulo-servicos .titulo-com-tracos::before,  .titulo-importancia .titulo-com-tracos-importancia::before , .titulo-importancia .titulo-com-tracos-importancia::after, .titulo-sobre
+    .titulo-com-tracos-sobre::after , .titulo-sobre .titulo-com-tracos-sobre::before  {
+       
+        display: none;
+    }
+
+    .servicos, .sobre, .importancia {
+        height: auto;
+    }
+
+    .navbar {
+        display: none;
+      }
+    
+      .btn-abrir-menu{
+        display: block;
+        display: flex;
+        align-items: center;
+    }
+   
+   
+ .logo img { 
+        width: auto;
+        height: 300px;
     }
 
     .tagline {
-        font-size: 40px;
+        font-size: 80px;
+    }
+
+    .menu-servicos {
+        flex-direction: column;
+        gap: 10px;
     }
 
     .titulo-com-tracos {
         font-size: 2rem;
     }
 
+    .titulo-servicos p {
+        font-size: 1.2rem;
+    }
+
+    .sub-title {
+        font-size: 1.7rem;
+        box-shadow: 0 1px 2px 2px #00000050;
+        border-radius: 20px;
+        width: 80%;
+        text-align: center;
+    }
+
+    .decoracao {
+        display: none;
+    }
+
+    .servicos-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 100%;
+    }
     .card h2 {
-        font-size: 24px;
+        font-size: 28px;
     }
 
     .card ul li {
         font-size: 14px;
     }
 
+
+    .titulo-importancia .titulo-com-tracos-importancia {
+        font-size: 2rem;
+    }
+
     .importancia-container {
         gap: 20px;
+    }
+
+    .importancia-1 {
+        width:100%;
+        flex-direction: column;
     }
 
     .textos-importancia h3 {
@@ -950,6 +1045,21 @@ footer {
     .textos-importancia p {
         font-size: 1rem;
     }
+
+    .camada {
+        width: 100%;
+    }
+
+    .titulo-com-tracos-sobre::after , .titulo-com-tracos-sobre::before 
+
+    .texto-sobre {
+        text-align: left;
+    }
+
+    .contato-diego p {
+        text-align: center;
+    }
+    
 }
 
 
