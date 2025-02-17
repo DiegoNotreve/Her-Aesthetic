@@ -1,31 +1,32 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const prevBtn = document.getElementById("prev");
-    const nextBtn = document.getElementById("next");
-    const carrosselWrapper = document.querySelector(".carrossel-wrapper");
-    const slides = document.querySelectorAll(".slide");
 
-    let currentIndex = 0;
 
-    function updateCarousel() {
-        const slideWidth = slides[0].offsetWidth;
-        carrosselWrapper.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+var swiper = new Swiper(".mySwiper", {
+
+    lopp:true,
+    grabCursos: true,
+
+
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+
+  // Responsive breakpoints
+  breakpoints: {
+    // when window width is >= 320px
+    425: {
+      slidesPerView: 1,
+      spaceBetween: 20
+    },
+    // when window width is >= 480px
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 30
+    },
+    // when window width is >= 640px
+    1188: {
+      slidesPerView: 3,
+      spaceBetween: 40
     }
-
-    nextBtn.addEventListener("click", function () {
-        if (currentIndex < slides.length - 1) {
-            currentIndex++;
-        } else {
-            currentIndex = 0; // Volta ao primeiro slide
-        }
-        updateCarousel();
-    });
-
-    prevBtn.addEventListener("click", function () {
-        if (currentIndex > 0) {
-            currentIndex--;
-        } else {
-            currentIndex = slides.length - 1; // Vai para o último slide
-        }
-        updateCarousel();
-    });
-});
+  }
+  });
