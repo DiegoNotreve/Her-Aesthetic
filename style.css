@@ -952,7 +952,7 @@ footer {
 }
 
 
-@media (max-width: 450px) {
+@media (max-width: 390px) {
    
     .titulo-servicos .titulo-com-tracos::after, .titulo-servicos .titulo-com-tracos::before,  .titulo-importancia .titulo-com-tracos-importancia::before , .titulo-importancia .titulo-com-tracos-importancia::after, .titulo-sobre
     .titulo-com-tracos-sobre::after , .titulo-sobre .titulo-com-tracos-sobre::before  {
@@ -1055,6 +1055,11 @@ footer {
 
     .camada {
         width: 100%;
+    }
+
+    .sobre-logo img {
+        width: auto;
+        max-height: 200px;
     }
 
     .titulo-com-tracos-sobre::after , .titulo-com-tracos-sobre::before 
