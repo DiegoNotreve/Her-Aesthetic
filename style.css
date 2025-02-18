@@ -976,12 +976,18 @@ footer {
    
  .logo img { 
         width: auto;
-        height: 300px;
+        height: 150px;
     }
 
+    .menu-mobile nav ul a {
+        font-size: 25px;
+    }
+    
     .tagline {
         font-size: 80px;
     }
+
+    
 
     .menu-servicos {
         flex-direction: column;
