@@ -672,6 +672,7 @@ footer {
     width: 0%;
     overflow: hidden;
     transition: .5s;
+    overflow-y: auto;
 }
 
 .menu-mobile.abrir-menu {
