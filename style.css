@@ -32,7 +32,7 @@ body, html {
 
 
 section {
-    height: 100vh; /* Certifique-se de que cada seção ocupe 100% da altura da tela */
+    height: 100vh; 
     display: flex;
     flex-direction: column;
 }
@@ -108,7 +108,7 @@ section {
     position: absolute;
     top: 0;
     left: 0;
-    width: 410%; /* A largura total é 3x a tela, pois há 3 imagens */
+    width: 410%; 
     height: 100%;
     display: flex;
     transition: transform 1s ease-in-out;
@@ -264,7 +264,7 @@ section {
 .card {
     background: var(--color-5); 
     border-radius: 10px; 
-    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  */
+   
     padding: 20px;
     text-align: center;
     width: 30%; 
@@ -413,7 +413,7 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Ajuste a opacidade aqui */
+    background: rgba(0, 0, 0, 0.5); 
     z-index: 1;
 }
 
@@ -746,7 +746,7 @@ footer {
 }
 
 .overlay-menu {
-    /* este é o efeito do overlay(sombra atrás do menu) */
+  
     background-color: #000000be;
     width: 100%;
     height: 100%;

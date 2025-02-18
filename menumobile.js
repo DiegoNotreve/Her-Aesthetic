@@ -7,7 +7,7 @@ btnMenu.addEventListener('click', ()=>{
 })
 
 menu.addEventListener('click', ()=>{
-    menu.classList.remove('abrir-menu')/* ao tocar no menu, ele se fechará */
+    menu.classList.remove('abrir-menu')
 })
 
 overlay.addEventListener('click', ()=>{
