@@ -264,7 +264,6 @@ section {
 .card {
     background: var(--color-5); 
     border-radius: 10px; 
-   
     padding: 20px;
     text-align: center;
     width: 30%; 
@@ -495,7 +494,10 @@ section {
     justify-content: center;
     align-items: center;
     font-family: "Nunito", sans-serif;
-    background: linear-gradient(#00000080, #00000080), url('https://glammpop.com/wp-content/uploads/2021/06/four_skin_care_ingredients_that_should_be_in_your_products.jpg');
+    background: linear-gradient(#00000080, #00000080), url('https://imageio.forbes.com/specials-images/imageserve/5fd7bd632ad2cc574ef90323/0x0.jpg?format=jpg&amp;crop=6016,3385,x0,y308,safe&amp;height=600&amp;width=1200&amp;fit=bounds');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
  
 .swiper {
