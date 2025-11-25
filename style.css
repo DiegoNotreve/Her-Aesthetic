@@ -103,7 +103,6 @@ section {
 }
 
 
-
 .hero-bg {
     position: absolute;
     top: 0;
@@ -113,6 +112,7 @@ section {
     display: flex;
     transition: transform 1s ease-in-out;
 }
+
 
 .hero-bg img {
     width: 100vw;
@@ -395,8 +395,143 @@ section {
     margin-right: 40px;
 }
 
-/* SECTION 4 */
 
+.sobre {
+    position: relative;
+    /* Garante que a seção tenha uma altura mínima na tela */
+    min-height: 80vh; 
+    background-image: url('https://i.pinimg.com/originals/1e/ed/81/1eed812403611a9fd71367c070b0b998.jpg');
+    background-attachment: fixed; /* Efeito Parallax suave para o fundo */
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* Adiciona padding interno para não grudar nas bordas */
+    padding: 80px 0; 
+}
+
+.sobre::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Overlay escuro, mas menos opaco para dar destaque à imagem de fundo */
+    background: #000000a6; 
+    z-index: 1;
+}
+
+.sobre * {
+    position: relative;
+    z-index: 2;
+}
+
+.titulo-com-tracos-sobre {
+    /* Usa uma fonte elegante e de alto contraste (assumindo que Nunito é clara) */
+    color: var(--color-2); 
+    font-family: "Nunito", sans-serif;
+    font-size: clamp(2rem, 5vw, 3.5rem); /* Tamanho de fonte responsivo */
+    font-weight: 800;
+    text-align: center;
+    position: relative;
+    /* Ajustei a margem para melhor espaçamento vertical */
+    margin: 0 0 50px 0; 
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.titulo-com-tracos-sobre::before,
+.titulo-com-tracos-sobre::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    /* Reduzi a largura para um visual mais sutil */
+    width: 8%; 
+    height: 1.5px; /* Linha um pouco mais fina */
+    background-color: var(--color-2);
+    /* Transição para efeito hover, se desejado */
+    transition: width 0.3s ease; 
+}
+
+/* Centralizei as linhas de forma mais robusta */
+.titulo-com-tracos-sobre::before {
+    left: 25%; /* Inicia em 35% do container */
+}
+
+.titulo-com-tracos-sobre::after {
+    right: 25%; /* Inicia em 35% do container */
+}
+
+/* Efeito sutil de hover nas linhas (opcional) */
+.titulo-com-tracos-sobre:hover::before,
+.titulo-com-tracos-sobre:hover::after {
+    width: 10%;
+}
+
+.container-sobre {
+    /* Garante que o container interno não seja muito largo em desktops */
+    max-width: 1000px; 
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px; /* Padding para evitar que o conteúdo toque nas bordas laterais */
+}
+
+.camada {
+    /* Usar max-width em vez de width rígido e remover height fixo */
+    max-width: 900px; 
+    width: 100%;
+    
+    /* A altura será definida pelo conteúdo (auto) */
+    /* height: 700px; -> Removido */
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+    /* Fundo ligeiramente mais opaco e com blur para destacar o conteúdo do fundo */
+    background-color: rgba(92, 88, 88, 0.253);
+    backdrop-filter: blur(5px); /* Efeito de blur no fundo */
+    -webkit-backdrop-filter: blur(5px);
+    
+    border-radius: 20px;
+    padding: 40px; /* Adicionado padding interno robusto */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5); /* Sombra mais marcada */
+}
+
+.sobre-logo {
+    margin-bottom: 30px;
+}
+
+.sobre-logo img {
+    /* Tamanho fixo para a logo, para que não fique gigante */
+    width: 200px; 
+    height: 200px;
+    
+    /* Assume que --color-4 é uma cor clara ou de destaque */
+    background-color: var(--color-4); 
+    
+    border-radius: 10px;
+    
+   
+}
+
+
+
+
+.texto-sobre {
+    /* Garante que a cor do texto seja clara (Assumindo --color-5) */
+    color: var(--color-5); 
+    padding: 0 10px; /* Ajustei o padding para dentro da camada */
+    font-size: 1.15rem; /* Tamanho mais adequado para leitura em tela */
+    line-height: 1.7;
+    font-family: "Poppins", sans-serif;
+    text-align: justify; /* Justificado para um visual de bloco profissional */
+}
+/* SECTION 4 */
+/* 
 .sobre {
     position: relative;
     background-image: url('https://i.pinimg.com/originals/1e/ed/81/1eed812403611a9fd71367c070b0b998.jpg');
@@ -481,7 +616,7 @@ section {
     font-size: 25px;
     font-family: "Poppins", serif;
 }
-
+ */
 
 
 /* SECTION 5 */
@@ -915,24 +1050,34 @@ footer {
     .sobre {
         height: auto;
     }
+.sobre {
+        /* Reduz o padding para mobile */
+        padding: 40px 0; 
+        min-height: auto; /* Remove min-height fixo */
+    }
 
-    .sobre {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    .container-sobre {
+        padding: 0 15px;
     }
 
     .camada {
-        height: auto;
-        padding: 20px;
-        margin: 20px;
+        /* Reduz o padding interno do card */
+        padding: 25px; 
+        border-radius: 15px;
     }
+    
+  
 
+    
+    
+    .sobre-logo img {
+        width: 150px;
+        height: 150px;
+    }
 
     .texto-sobre {
-        text-align: center;
+        font-size: 1rem; /* Tamanho de fonte padrão para mobile */
     }
-
     
     .avaliacao-quote {
         font-size: 1.1rem; /* Reduz o tamanho do texto */
@@ -953,6 +1098,121 @@ footer {
     }
 }
 
+
+
+@media (max-width: 480px) {
+
+    .titulo-servicos .titulo-com-tracos::after, .titulo-servicos .titulo-com-tracos::before,  .titulo-importancia .titulo-com-tracos-importancia::before , .titulo-importancia .titulo-com-tracos-importancia::after, .titulo-sobre
+    .titulo-com-tracos-sobre::after , .titulo-sobre .titulo-com-tracos-sobre::before  {
+       
+        display: none;
+    }
+
+    .servicos, .sobre, .importancia {
+        height: auto;
+    }
+
+    .navbar {
+        display: none;
+      }
+    
+      .btn-abrir-menu{
+        display: block;
+        display: flex;
+        align-items: center;
+    }
+   
+   
+ .logo img { 
+        width: auto;
+        height: 150px;
+    }
+
+    .menu-mobile nav ul a {
+        font-size: 25px;
+    }
+    
+    .tagline {
+        font-size: 80px;
+    }
+
+    
+
+    .menu-servicos {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .titulo-com-tracos {
+        font-size: 2rem;
+    }
+
+    .titulo-servicos p {
+        font-size: 1.2rem;
+    }
+
+    .sub-title {
+        font-size: 1.7rem;
+        box-shadow: 0 1px 2px 2px #00000050;
+        border-radius: 20px;
+        width: 80%;
+        text-align: center;
+    }
+
+    .decoracao {
+        display: none;
+    }
+
+    .servicos-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 100%;
+    }
+    .card h2 {
+        font-size: 28px;
+    }
+
+    .card ul li {
+        font-size: 14px;
+    }
+
+
+    .titulo-importancia .titulo-com-tracos-importancia {
+        font-size: 2rem;
+    }
+
+    .importancia-container {
+        gap: 20px;
+    }
+
+    .importancia-1 {
+        width:100%;
+        flex-direction: column;
+    }
+
+    .textos-importancia h3 {
+        font-size: 1.5rem;
+    }
+
+    .textos-importancia p {
+        font-size: 1rem;
+    }
+
+    .camada {
+        width: 100%;
+    }
+
+    .sobre-logo img {
+        width: auto;
+        max-height: 200px;
+    }
+
+    
+    
+}
 
 @media (max-width: 390px) {
    
@@ -1076,7 +1336,104 @@ footer {
     
 }
 
+/* 💻 Media Query para Monitores Menores (Notebooks/Desktops)
+   Aplica-se a larguras entre 1025px e 1440px */
+@media (min-width: 1025px) and (max-width: 1440px) {
 
+
+      .servicos, .sobre, .importancia {
+        height: auto;
+    }
+
+
+    /* --- Seção de Navegação (Navbar) --- */
+    .menu li {
+        /* Reduz o espaçamento entre os itens do menu para caberem melhor */
+        margin: 0 20px;
+    }
+    
+    .menu li a {
+        /* Leve redução no tamanho da fonte */
+        font-size: 20px;
+    }
+    
+    /* --- Seção 1 (Hero) --- */
+    .tagline {
+        /* Reduz o tamanho da fonte do slogan para não ser muito grande */
+        font-size: 80px;
+    }
+
+    /* --- Seção 2 (Serviços) --- */
+    .titulo-com-tracos::before {
+        /* Ajusta a posição/tamanho das linhas decorativas no título */
+        left: 10%;
+        width: 10%;
+    }
+    
+    .titulo-com-tracos::after {
+        right: 10%;
+        width: 10%;
+    }
+    
+    .card {
+        /* Garante que os cards ocupem uma largura razoável */
+        width: 25%;
+    }
+    
+    .card h2 {
+        font-size: 24px;
+    }
+    
+    .card ul li {
+        font-size: 0.9rem;
+    }
+
+    /* --- Seção 3 (Importância) --- */
+    .importancia-1 {
+        /* Otimiza a largura dos blocos de texto/imagem */
+        width: 80%;
+    }
+
+    .titulo-com-tracos-importancia::before {
+        /* Ajusta a posição/tamanho das linhas decorativas */
+        left: 10%;
+        width: 10%;
+    }
+    
+    .titulo-com-tracos-importancia::after {
+        right: 10%;
+        width: 10%;
+    }
+
+    /* --- Seção 4 (Sobre) --- */
+    .camada {
+        /* Aumenta a largura da caixa "Sobre" para ocupar mais espaço */
+        width: 85%;
+    }
+    
+    .texto-sobre {
+        /* Reduz o tamanho da fonte para melhor leitura */
+        font-size: 20px;
+    }
+    
+    .titulo-com-tracos-sobre::before {
+        /* Ajusta a posição/tamanho das linhas decorativas */
+        left: 15%;
+    }
+    
+    .titulo-com-tracos-sobre::after {
+        right: 15%;
+    }
+
+    .titulo-importancia .titulo-com-tracos-importancia{
+        font-size: 2.3rem;
+    }
+
+    .importancia-container {
+        padding: 20px;
+    }
+    
+}
 
 
 
